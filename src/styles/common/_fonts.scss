@@ -1,0 +1,15 @@
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: local(#{$url}),
+    url("~assets/fonts/#{$url}.woff2") format('woff2'),
+    url("~assets/fonts/#{$url}.woff") format('woff');
+    font-weight: #{$weight};
+    font-display: block;
+    font-style: normal;
+  }
+}
+
+@include font-face('Barlow', 'Barlow-Regular', 400);
+@include font-face('Barlow', 'Barlow-SemiBold', 600);
+@include font-face('Barlow', 'Barlow-Bold', 700);
