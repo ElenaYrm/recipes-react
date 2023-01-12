@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "no-console": "warn",
+    "prefer-const": "warn",
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": ["error", {
+      "code":  120,
+      "ignoreUrls": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true
+    }],
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": ["error", "always"],
+    "no-var": "error",
+    "no-unused-vars": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
