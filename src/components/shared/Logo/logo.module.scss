@@ -1,0 +1,11 @@
+@import "src/styles/common";
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    @include font(bold, h3, var(--primary));
+  }
+}
