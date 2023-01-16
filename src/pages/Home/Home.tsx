@@ -1,7 +1,9 @@
+import { RandomMeal } from '../../components/RandomMeal';
+
 function Home() {
   return (
     <>
-      <p>Home</p>
+      <RandomMeal />
     </>
   );
 }

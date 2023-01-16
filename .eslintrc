@@ -28,6 +28,7 @@
     "semi": ["error", "always"],
     "no-var": "error",
     "no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-interface": "warn",
     "prettier/prettier": [
       "warn",
       {

@@ -1,0 +1,49 @@
+@import "src/styles/common";
+
+.recipe {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: $border-radius-2x;
+  box-shadow: var(--shadow-secondary);
+  overflow: hidden;
+
+  &__info {
+    padding: 40px 20px;
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    margin: 0 0 25px;
+    @include font(semibold, h3, var(--primary));
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 10px;
+
+    & span {
+      @include font(semibold, p1, var(--secondary));
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: 100%;
+  }
+
+  &__image {
+    flex-basis: 65%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
