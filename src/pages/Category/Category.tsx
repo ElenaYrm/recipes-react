@@ -1,7 +1,9 @@
+import { CategoriesInfo } from '../../components/CategoriesInfo';
+
 function Category() {
   return (
     <>
-      <p>Category</p>
+      <CategoriesInfo />
     </>
   );
 }

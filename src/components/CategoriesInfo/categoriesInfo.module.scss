@@ -1,0 +1,16 @@
+@import "src/styles/common";
+
+.categories {
+  padding: $gap-30 0;
+
+  &__title {
+    margin: 0 0 $gap-30;
+    @include font(semibold, h2, var(--secondary));
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap-50;
+  }
+}

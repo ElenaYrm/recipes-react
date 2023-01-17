@@ -1,0 +1,50 @@
+@import "src/styles/common";
+
+.category {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--shadow-secondary);
+  border-radius: $border-radius-2x;
+
+  &__image {
+    height: 40%;
+    width: 100%;
+    margin-bottom: $gap-30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  &__descr {
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__caption {
+    margin: 0 0 20px;
+    @include font(semibold, h3, var(--secondary));
+  }
+
+  &__info {
+    margin: 0 0 20px;
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: 100%;
+  }
+}
