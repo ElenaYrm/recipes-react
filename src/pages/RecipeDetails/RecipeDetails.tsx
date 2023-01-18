@@ -1,4 +1,4 @@
-function Recipe() {
+function RecipeDetails() {
   return (
     <>
       <p>Detail recipe</p>
@@ -6,4 +6,4 @@ function Recipe() {
   );
 }
 
-export default Recipe;
+export default RecipeDetails;

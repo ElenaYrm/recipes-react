@@ -1,0 +1,54 @@
+@import "src/styles/common";
+
+.search {
+  position: relative;
+  padding: $gap-30;
+  margin-bottom: $gap-50;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-secondary);
+  border-radius: $border-radius-2x;
+
+  &__label {
+    width: 100%;
+  }
+
+  &__input {
+    padding: 12px 20px;
+    width: 100%;
+    background-color: var(--secondary-light);
+    border: none;
+    border-radius: $border-radius-1x;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: calc($gap-30 + 20px);
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 25px;
+      height: 1px;
+      background-color: var(--secondary);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

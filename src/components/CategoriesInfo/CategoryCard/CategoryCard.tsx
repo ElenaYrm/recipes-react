@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './categoryCard.module.scss';
 
-function CategoryCard({ id, title, descr, img }: ICategoryLocal) {
+function CategoryCard({ title, descr, img }: ICategoryLocal) {
   const navigate = useNavigate();
 
   function goToCategoryByID() {
-    navigate(`/category/${id}`);
+    navigate(`/category/${title}`);
   }
 
   return (

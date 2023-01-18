@@ -1,7 +1,9 @@
+import { IngredientsInfo } from '../../components/IngredientsInfo';
+
 function Ingredients() {
   return (
     <>
-      <p>Ingredients</p>
+      <IngredientsInfo />
     </>
   );
 }

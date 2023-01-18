@@ -1,0 +1,27 @@
+@import "src/styles/common";
+
+.ingredients {
+  padding: $gap-30 0;
+
+  &__title {
+    margin: 0 0 $gap-30;
+    @include font(semibold, h2, var(--secondary));
+  }
+
+  &__list {
+    margin-bottom: $gap-50;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 230px;
+    gap: $gap-50;
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__btn {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

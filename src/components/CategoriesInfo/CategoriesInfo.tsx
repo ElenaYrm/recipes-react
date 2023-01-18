@@ -1,10 +1,10 @@
-import { useCategoriesInfo } from '../../store/categoriesInfo/useCategoriesInfo';
 import { CategoryCard } from './CategoryCard';
+import { useCategories } from '../../store/categoriesInfo/useCategories';
 
 import styles from './categoriesInfo.module.scss';
 
 function CategoriesInfo() {
-  const [categories, { isLoading, error }] = useCategoriesInfo();
+  const [categories, { isLoading, error }] = useCategories();
 
   return (
     <section className={styles.categories}>

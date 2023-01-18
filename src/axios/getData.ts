@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-type Params = {
+export type Params = {
   [n: string]: string;
 };
 
