@@ -14,14 +14,14 @@ export function useShowMoreBtn<T>(arr: Array<T>, stepBtn: number): [Array<T>, ()
   }
 
   useEffect(() => {
-    if (arr.length > 0 && arr.length < count) {
+    if (arr.length > 0 && arr.length <= count) {
       const result: Array<T> = [];
       for (let i = 0; i < arr.length; i++) {
         result.push(arr[i]);
       }
       setData(result);
       setIsDisabled(true);
-    } else if (arr.length > 0 && arr.length >= count) {
+    } else if (arr.length > 0 && arr.length > count) {
       const result: Array<T> = [];
       for (let i = 0; i < count; i++) {
         result.push(arr[i]);

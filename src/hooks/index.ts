@@ -1,2 +1,2 @@
 export * from './useShowMoreBtn';
-export * from './useSearchIngredient';
+export * from './useFilterBySearch';

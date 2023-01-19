@@ -4,7 +4,7 @@ import { useAppDispatch } from '../store';
 import { selectCategoriesInfo, selectLoadCategoriesInfo } from './categories-selectors';
 import { loadCategoriesInfo } from './categories-slice';
 import { CATEGORIES_URL } from '../../axios/configAxios';
-import { ICategoryLocal } from '../../types';
+import { ICategoryLocal } from '../../types/category';
 
 export function useCategories(): [ICategoryLocal[], ReturnType<typeof selectLoadCategoriesInfo>] {
   const dispatch = useAppDispatch();

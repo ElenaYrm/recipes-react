@@ -1,4 +1,4 @@
-import { ICategoryLocal } from '../../../types';
+import { ICategoryLocal } from '../../../types/category';
 import { CustomButton } from '../../shared/CustomButton';
 import { useNavigate } from 'react-router-dom';
 

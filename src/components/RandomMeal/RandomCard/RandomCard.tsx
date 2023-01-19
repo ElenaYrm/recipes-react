@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { IRecipeLocal } from '../../../types';
+import { IMealLocal } from '../../../types/meal';
 
 import styles from './randomCard.module.scss';
 import { CustomButton } from '../../shared/CustomButton';
 
-interface RandomCardProps extends Pick<IRecipeLocal, 'id' | 'name' | 'area' | 'category' | 'img'> {}
+type RandomCardProps = Pick<IMealLocal, 'id' | 'name' | 'area' | 'category' | 'img'>;
 
 function RandomCard({ id, name, area, category, img }: RandomCardProps) {
   const navigate = useNavigate();

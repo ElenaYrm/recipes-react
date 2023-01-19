@@ -1,8 +1,11 @@
-import { Ingredient, IRecipeAPI, IRecipeLocal } from '../types';
+import { IMealAPI, IMealLocal, Ingredient } from '../types/meal';
 
-type newKeys = keyof IRecipeAPI;
+// transform recipe data from API to local to improve understanding
+// and config ingredient and measure info
 
-export const extractLocalRecipe = (recipe: IRecipeAPI[]): IRecipeLocal[] => {
+type newKeys = keyof IMealAPI;
+
+export const extractLocalMeal = (recipe: IMealAPI[]): IMealLocal[] => {
   return recipe.map((item) => {
     const newIngredients: Ingredient[] = [];
     for (let i = 1; i <= 20; i++) {

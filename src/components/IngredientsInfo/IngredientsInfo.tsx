@@ -1,9 +1,9 @@
 import { useIngredients } from '../../store/ingredientsInfo/useIngredients';
+import { useShowMoreBtn } from '../../hooks';
+import { useFilterBySearch } from '../../hooks';
 import { IngredientCard } from './IngredientCard';
 import { CustomButton } from '../shared/CustomButton';
 import { CustomSearch } from '../shared/CustomSearch';
-import { useShowMoreBtn } from '../../hooks';
-import { useSearchIngredient } from '../../hooks';
 
 import styles from './ingredientsInfo.module.scss';
 
@@ -11,7 +11,7 @@ const step = 10;
 
 function IngredientsInfo() {
   const [ingredients, { isLoading, error }] = useIngredients();
-  const filterIngredients = useSearchIngredient(ingredients);
+  const filterIngredients = useFilterBySearch(ingredients);
   const [data, handleCount, isDisabled] = useShowMoreBtn(filterIngredients, step);
 
   return (

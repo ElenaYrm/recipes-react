@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getData } from '../../axios/getData';
-import { ICategoriesListAPI, ICategoryLocal } from '../../types';
-import { extractLocalCategory } from '../../utils/extractLocalCategory';
+import { ICategoriesListAPI, ICategoryLocal } from '../../types/category';
+import { extractLocalCategory } from '../../utils';
 
 export const loadCategoriesInfo = createAsyncThunk<
   ICategoryLocal[],

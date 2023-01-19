@@ -3,7 +3,7 @@ import { getData, Params } from '../../axios/getData';
 import { IIngredientLocal, IIngredientsListAPI } from '../../types/ingredient';
 import { extractLocalIngredient } from '../../utils';
 
-type Args = {
+export type Args = {
   url: string;
   params: Params;
 };

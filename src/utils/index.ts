@@ -1,3 +1,4 @@
 export * from './extractLocalIngredient';
 export * from './extractLocalCategory';
-export * from './extractLocalRecipe';
+export * from './extractLocalMeal';
+export * from './extractLocalRecipesList';

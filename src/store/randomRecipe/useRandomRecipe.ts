@@ -4,9 +4,9 @@ import { useAppDispatch } from '../store';
 import { selectLoadRandomInfo, selectRandomRecipe } from './random-selectors';
 import { loadRandomRecipe } from './random-slice';
 import { RANDOM_URL } from '../../axios/configAxios';
-import { IRecipeLocal } from '../../types';
+import { IMealLocal } from '../../types/meal';
 
-export function useRandomRecipe(): [IRecipeLocal, ReturnType<typeof selectLoadRandomInfo>] {
+export function useRandomRecipe(): [IMealLocal, ReturnType<typeof selectLoadRandomInfo>] {
   const dispatch = useAppDispatch();
   const recipe = useSelector(selectRandomRecipe);
   const { isLoading, error } = useSelector(selectLoadRandomInfo);

@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getData } from '../../axios/getData';
-import { extractLocalRecipe } from '../../utils/extractLocalRecipe';
-import { IMealsAPI, IRecipeLocal } from '../../types';
+import { extractLocalMeal } from '../../utils';
+import { IMealLocal, IMealsAPI } from '../../types/meal';
 
 export const loadRandomRecipe = createAsyncThunk<
-  IRecipeLocal[],
+  IMealLocal[],
   string,
   {
     state: { random: IRandomSlice };
@@ -15,7 +15,7 @@ export const loadRandomRecipe = createAsyncThunk<
   async (url: string, { rejectWithValue }) => {
     try {
       const response = await getData<IMealsAPI>(url);
-      return extractLocalRecipe(response.data.meals);
+      return extractLocalMeal(response.data.meals);
     } catch (error) {
       if (error instanceof Error) {
         return rejectWithValue(error.message);
@@ -37,7 +37,7 @@ export const loadRandomRecipe = createAsyncThunk<
 );
 
 interface IRandomSlice {
-  recipe: IRecipeLocal[];
+  recipe: IMealLocal[];
   isLoading: boolean;
   error: string;
 }

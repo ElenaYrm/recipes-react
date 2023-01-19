@@ -1,0 +1,30 @@
+@import "src/styles/common";
+
+.recipes {
+  padding: $gap-30 0;
+
+  &__title {
+    margin: 0 0 $gap-30;
+    @include font(semibold, h2, var(--secondary));
+
+    & span {
+      color: var(--thirdly);
+    }
+  }
+
+  &__list {
+    margin-bottom: $gap-50;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $gap-50;
+  }
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__btn {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
