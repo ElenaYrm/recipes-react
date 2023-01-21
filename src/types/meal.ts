@@ -3,15 +3,20 @@ export type Ingredient = {
   measure: string;
 };
 
+export type DetailInfo = {
+  title: string;
+  descr: string;
+};
+
 export interface IMealLocal {
   id: string;
   name: string;
-  category: string;
-  area: string;
+  category: DetailInfo;
+  area: DetailInfo;
   instructions: string;
   img: string;
   video: string;
-  source: string;
+  source: DetailInfo;
   ingredients: Ingredient[];
 }
 

@@ -4,6 +4,7 @@ import { randomReducer } from './randomRecipe/random-slice';
 import { categoriesReducer } from './categoriesInfo/categories-slice';
 import { ingredientsReducer } from './ingredientsInfo/ingredients-slice';
 import { recipesListReducer } from './recipesList/recipesList-slice';
+import { mealReducer } from './mealInfo/mealInfo-slice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     categoriesInfo: categoriesReducer,
     ingredientsInfo: ingredientsReducer,
     recipesList: recipesListReducer,
+    mealInfo: mealReducer,
   },
 });
 

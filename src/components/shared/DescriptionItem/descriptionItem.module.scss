@@ -1,0 +1,10 @@
+@import "src/styles/common";
+
+.descr {
+  margin-bottom: 5px;
+  @include font(regular, p1, var(--secondary));
+
+  &__title {
+    @include font(semibold, p1, var(--secondary));
+  }
+}

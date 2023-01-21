@@ -3,6 +3,7 @@ import { IMealLocal } from '../../../types/meal';
 
 import styles from './randomCard.module.scss';
 import { CustomButton } from '../../shared/CustomButton';
+import { DescriptionItem } from '../../shared/DescriptionItem';
 
 type RandomCardProps = Pick<IMealLocal, 'id' | 'name' | 'area' | 'category' | 'img'>;
 
@@ -17,14 +18,10 @@ function RandomCard({ id, name, area, category, img }: RandomCardProps) {
     <article className={styles.recipe}>
       <div className={styles.recipe__info}>
         <h3 className={styles.recipe__name}>{name}</h3>
-        <div className={styles.recipe__descr}>
-          <span>Cuisine: </span>
-          {area}
-        </div>
-        <div className={styles.recipe__descr}>
-          <span>Category: </span>
-          {category}
-        </div>
+        <ul>
+          <DescriptionItem {...category} />
+          <DescriptionItem {...area} />
+        </ul>
         <CustomButton
           text={'Detail recipe'}
           handleClick={goToDetailByID}

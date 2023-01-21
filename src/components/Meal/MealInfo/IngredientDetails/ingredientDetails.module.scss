@@ -1,0 +1,11 @@
+.line {
+  display: flex;
+  justify-content: space-between;
+
+  & span:nth-child(2) {
+    flex: 1 0;
+    border-bottom: 1px dotted #000;
+    height: 1em;
+    margin: 0 0.5em;
+  }
+}

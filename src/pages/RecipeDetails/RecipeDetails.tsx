@@ -1,7 +1,9 @@
+import { Meal } from '../../components/Meal';
+
 function RecipeDetails() {
   return (
     <>
-      <p>Detail recipe</p>
+      <Meal />
     </>
   );
 }

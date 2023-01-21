@@ -19,15 +19,30 @@ export const extractLocalMeal = (recipe: IMealAPI[]): IMealLocal[] => {
       }
     }
 
+    let searchVideo = '';
+    if (item.strYoutube) {
+      const videoURL = new URL(item.strYoutube);
+      searchVideo = new URLSearchParams(videoURL.search).get('v') || '';
+    }
+
     return {
       id: item.idMeal,
       name: item.strMeal,
-      category: item.strCategory,
-      area: item.strArea,
+      category: {
+        title: 'Category',
+        descr: item.strCategory,
+      },
+      area: {
+        title: 'Cuisine',
+        descr: item.strArea,
+      },
       instructions: item.strInstructions,
       img: item.strMealThumb,
-      video: item.strYoutube,
-      source: item.strSource,
+      video: searchVideo,
+      source: {
+        title: 'Source',
+        descr: item.strSource,
+      },
       ingredients: newIngredients,
     };
   });

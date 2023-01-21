@@ -23,14 +23,6 @@
     text-align: center;
   }
 
-  &__descr {
-    margin-bottom: 10px;
-
-    & span {
-      @include font(semibold, p1, var(--secondary));
-    }
-  }
-
   &__btn {
     margin-top: auto;
     width: 100%;

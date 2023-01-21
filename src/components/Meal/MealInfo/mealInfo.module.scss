@@ -1,0 +1,52 @@
+@import "src/styles/common";
+
+.meal {
+
+  &__name {
+    margin: 0 0 $gap-30;
+    @include font(semibold, h2, var(--secondary));
+  }
+
+  &__image {
+    margin-bottom: $gap-30;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: $border-radius-2x;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__descr {
+    margin-bottom: $gap-50;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__info {
+    flex-basis: 45%;
+  }
+
+  &__ingredients {
+    flex-basis: 45%;
+  }
+
+  &__caption {
+    margin: 0 0 15px;
+  }
+
+  &__instructions {
+    margin: 0 0 $gap-50;
+  }
+
+  &__video {
+    width: 100%;
+    min-height: 500px;
+  }
+}
