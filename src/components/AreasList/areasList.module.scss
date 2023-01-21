@@ -1,0 +1,27 @@
+@import "src/styles/common";
+
+.areas {
+  padding: $gap-30 0;
+
+  &__title {
+    margin: 0 0 $gap-30;
+    @include font(semibold, h2, var(--secondary));
+  }
+
+  &__list {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin: 0 $gap-30 $gap-30 0;
+    padding: 15px 20px;
+    @include font(semibold, p1, var(--secondary));
+    border-radius: $border-radius-2x;
+    box-shadow: var(--shadow-thirdly);
+  }
+}

@@ -32,6 +32,11 @@ export function useRecipesList(
           i: path.slice('ingredients'.length + 2),
         };
       }
+      if (path.includes('area')) {
+        filter = {
+          a: path.slice('area'.length + 2),
+        };
+      }
 
       dispatch(loadRecipesList({ url: FILTER_URL, params: filter }));
       dispatch(addPath(path));
