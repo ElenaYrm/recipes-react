@@ -1,0 +1,50 @@
+@import "src/styles/common";
+
+.hero {
+  padding: $gap-30 0;
+  height: 500px;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-secondary);
+    overflow: hidden;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 150px 0;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    @include font(bold, h1, var(--secondary));
+    z-index: 10;
+
+    & span:nth-child(1) {
+      padding-left: 60px;
+      margin-bottom: 20px;
+    }
+
+    & span:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 90%;
+  }
+
+  &__left {
+    top: 0;
+    right: 0;
+  }
+
+  &__right {
+    left: 0;
+    bottom: 0;
+  }
+}

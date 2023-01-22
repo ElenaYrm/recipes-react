@@ -12,11 +12,22 @@
   border-radius: $border-radius-2x;
 
   &__label {
+    position: relative;
     width: 100%;
   }
 
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%) rotateY(180deg);
+    width: 25px;
+    height: 25px;
+    color: var(--secondary);
+  }
+
   &__input {
-    padding: 12px 20px;
+    padding: 12px 20px 12px 50px;
     width: 100%;
     background-color: var(--secondary-light);
     border: none;
@@ -30,25 +41,11 @@
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
+    color: var(--secondary);
 
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 25px;
-      height: 1px;
-      background-color: var(--secondary);
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
+    & svg {
+      width: 100%;
+      height: 100%;
     }
   }
 }

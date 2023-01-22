@@ -1,7 +1,7 @@
 import { Logo } from '../shared/Logo';
+import { Nav } from './Nav';
 
 import styles from './header.module.scss';
-import { Nav } from './Nav';
 
 function Header() {
   return (

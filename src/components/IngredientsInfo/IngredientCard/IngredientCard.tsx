@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Image } from '../../shared/Image';
 import { IIngredientLocal } from '../../../types/ingredient';
 
 import styles from './ingredientCard.module.scss';
@@ -10,9 +11,8 @@ function IngredientCard({ name, img }: IIngredientLocal) {
     <li>
       <Link to={`/ingredients/${linkName}`}>
         <article className={styles.ingredient}>
-          <div className={styles.ingredient__image}>
-            <img src={img} alt={name} />
-          </div>
+          <Image src={img} title={name} className={styles.ingredient__image} />
+
           <h3 className={styles.ingredient__name}>{name}</h3>
         </article>
       </Link>

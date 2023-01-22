@@ -1,5 +1,7 @@
-import { useAreasList } from '../../store/areasList/useAreasList';
 import { Link } from 'react-router-dom';
+import { useAreasList } from '../../store/areasList/useAreasList';
+import { Message } from '../shared/Message';
+import { Loader } from '../shared/Loader';
 
 import styles from './areasList.module.scss';
 
@@ -10,9 +12,11 @@ function AreasList() {
     <section className={styles.areas}>
       <div className="container">
         <h2 className={styles.areas__title}>Areas</h2>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
+
+        {isLoading && <Loader />}
+        {error && <Message message={error} typeMessage={'error'} />}
+
+        {!isLoading && !error && (
           <>
             {areas.length > 0 ? (
               <ul className={styles.areas__list}>
@@ -23,12 +27,10 @@ function AreasList() {
                 ))}
               </ul>
             ) : (
-              <div>No results</div>
+              <Message message={'No result'} typeMessage={'warn'} />
             )}
           </>
         )}
-
-        {error && <div>{error}</div>}
       </div>
     </section>
   );

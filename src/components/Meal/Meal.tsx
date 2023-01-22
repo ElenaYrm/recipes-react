@@ -1,6 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useMealInfo } from '../../store/mealInfo/useMealInfo';
 import { MealInfo } from './MealInfo';
+import { BackButton } from '../shared/BackButton';
+import { Loader } from '../shared/Loader';
+import { Message } from '../shared/Message';
 
 import styles from './meal.module.scss';
 
@@ -11,9 +14,12 @@ function Meal() {
   return (
     <section className={styles.mealInfo}>
       <div className="container">
-        {isLoading ? <div>Loading...</div> : <MealInfo {...meal} />}
+        <BackButton />
 
-        {error && <div>Error</div>}
+        {isLoading && <Loader />}
+        {error && <Message message={error} typeMessage={'error'} />}
+
+        {!isLoading && !error && <MealInfo {...meal} />}
       </div>
     </section>
   );

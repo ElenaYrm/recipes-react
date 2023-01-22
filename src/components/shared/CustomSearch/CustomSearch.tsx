@@ -1,5 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Icon } from '../Icon';
+import { IconId } from '../../../types/enums';
 
 import styles from './customSearch.module.scss';
 
@@ -31,6 +33,9 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
     <form className={styles.search}>
       <label className={styles.search__label}>
         <span className="visually-hidden">{placeholder}</span>
+
+        <Icon id={IconId.search} className={styles.search__icon} />
+
         <input
           value={value}
           onChange={handleChange}
@@ -39,7 +44,10 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
           className={styles.search__input}
         />
       </label>
-      <button type="button" className={styles.search__btn} onClick={handleClick}></button>
+
+      <button type="button" className={styles.search__btn} onClick={handleClick}>
+        <Icon id={IconId.close} />
+      </button>
     </form>
   );
 }

@@ -1,21 +1,39 @@
-import { NavLink } from 'react-router-dom';
+import { NavItem } from './NavItem';
 
 import styles from './nav.module.scss';
+
+export interface INavItem {
+  src: string;
+  title: string;
+}
+
+const links: INavItem[] = [
+  {
+    src: '/',
+    title: 'Home',
+  },
+  {
+    src: 'category',
+    title: 'Category',
+  },
+  {
+    src: 'ingredients',
+    title: 'Ingredients',
+  },
+];
 
 function Nav() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.nav__list}>
-        <li className={styles.nav__item}>
-          <NavLink to="category" className={({ isActive }) => (isActive ? styles.active : '')}>
-            Category
-          </NavLink>
-        </li>
-        <li className={styles.nav__item}>
-          <NavLink to="ingredients" className={({ isActive }) => (isActive ? styles.active : '')}>
-            Ingredients
-          </NavLink>
-        </li>
+        {links.map((item) => (
+          <NavItem
+            key={item.title}
+            {...item}
+            className={styles.nav__item}
+            activeClass={styles.active}
+          />
+        ))}
       </ul>
     </nav>
   );

@@ -3,6 +3,9 @@ import { useRecipesList } from '../../store/recipesList/useRecipesList';
 import { useFilterBySearch, useShowMoreBtn } from '../../hooks';
 import { CustomSearch } from '../shared/CustomSearch';
 import { CustomButton } from '../shared/CustomButton';
+import { BackButton } from '../shared/BackButton';
+import { Loader } from '../shared/Loader';
+import { Message } from '../shared/Message';
 import { RecipeCard } from './RecipeCard';
 
 import styles from './recipesList.module.scss';
@@ -20,6 +23,8 @@ function RecipesList() {
   return (
     <section className={styles.recipes}>
       <div className="container">
+        <BackButton />
+
         <CustomSearch placeholder={'Enter meal'} />
 
         <h2 className={styles.recipes__title}>
@@ -27,16 +32,17 @@ function RecipesList() {
           <span>{title}</span>
         </h2>
 
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : (
+        {isLoading && <Loader />}
+        {error && <Message message={error} typeMessage={'error'} />}
+
+        {!isLoading && !error && (
           <>
             {data.length > 0 ? (
               <ul className={styles.recipes__list}>
                 {data.length > 0 && data.map((item) => <RecipeCard key={item.id} {...item} />)}
               </ul>
             ) : (
-              <div>No results</div>
+              <Message message={'No result'} typeMessage={'warn'} />
             )}
 
             {isDisabled ? null : (
@@ -51,8 +57,6 @@ function RecipesList() {
             )}
           </>
         )}
-
-        {error && <div>Error...</div>}
       </div>
     </section>
   );

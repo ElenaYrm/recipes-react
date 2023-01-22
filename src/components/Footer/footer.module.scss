@@ -1,0 +1,23 @@
+@import "src/styles/common";
+
+.footer {
+  padding: $gap-30 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    margin: 0 0 $gap-30 0;
+    @include font(semibold, h3, (var(--secondary)))
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -10,18 +10,12 @@
     margin-bottom: 15px;
     min-height: 80%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 100%;
     box-shadow: var(--shadow-secondary);
-    overflow: hidden;
-
 
     & img {
       width: 70%;
       height: 70%;
-      display: block;
       object-fit: contain;
     }
   }

@@ -1,0 +1,19 @@
+@import "src/styles/common";
+
+.wrapper {
+  padding: $gap-50;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  margin: 0;
+  @include font(semibold, h2, var(--thirdly));
+}
+
+.warn {
+  margin: 0;
+  @include font(semibold, h3, var(--secondary));
+}

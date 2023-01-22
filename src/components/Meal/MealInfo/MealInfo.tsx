@@ -1,8 +1,9 @@
-import { IMealLocal } from '../../../types/meal';
 import { IngredientDetails } from './IngredientDetails';
+import { DescriptionItem } from '../../shared/DescriptionItem';
+import { Image } from '../../shared/Image';
+import { IMealLocal } from '../../../types/meal';
 
 import styles from './mealInfo.module.scss';
-import { DescriptionItem } from '../../shared/DescriptionItem';
 
 function MealInfo({
   name,
@@ -16,16 +17,17 @@ function MealInfo({
 }: IMealLocal) {
   return (
     <>
-      <div className={styles.meal__image}>
-        <img src={img} alt={name} />
-      </div>
+      <Image src={img} title={name} className={styles.meal__image} />
+
       <h2 className={styles.meal__name}>{name}</h2>
+
       <div className={styles.meal__descr}>
         <ul className={styles.meal__info}>
           <DescriptionItem {...category} />
           <DescriptionItem {...area} />
           {source?.descr && <DescriptionItem {...source} isLink={true} />}
         </ul>
+
         <div className={styles.meal__ingredients}>
           <h3 className={styles.meal__caption}>Ingredients</h3>
           {ingredients?.length > 0 ? (
@@ -37,10 +39,12 @@ function MealInfo({
           ) : null}
         </div>
       </div>
+
       <div>
         <h3 className={styles.meal__caption}>Instructions</h3>
         <p className={styles.meal__instructions}>{instructions}</p>
       </div>
+
       {video && (
         <div>
           <h3 className={styles.meal__caption}>Video</h3>

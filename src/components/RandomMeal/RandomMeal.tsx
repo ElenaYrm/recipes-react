@@ -1,11 +1,13 @@
 import { useRandomRecipe } from '../../store/randomRecipe/useRandomRecipe';
-import { RandomCard } from './RandomCard';
 import { useAppDispatch } from '../../store/store';
 import { loadRandomRecipe } from '../../store/randomRecipe/random-slice';
 import { RANDOM_URL } from '../../axios/configAxios';
+import { CustomButton } from '../shared/CustomButton';
+import { Loader } from '../shared/Loader';
+import { Message } from '../shared/Message';
+import { RandomCard } from './RandomCard';
 
 import styles from './randomMeal.module.scss';
-import { CustomButton } from '../shared/CustomButton';
 
 function RandomMeal() {
   const [recipe, { isLoading, error }] = useRandomRecipe();
@@ -28,8 +30,10 @@ function RandomMeal() {
           />
         </div>
 
-        {isLoading ? <div>Loading...</div> : <RandomCard {...recipe} />}
-        {error && <div>Error...</div>}
+        {isLoading && <Loader />}
+        {error && <Message message={error} typeMessage={'error'} />}
+
+        {!isLoading && !error && <RandomCard {...recipe} />}
       </div>
     </section>
   );

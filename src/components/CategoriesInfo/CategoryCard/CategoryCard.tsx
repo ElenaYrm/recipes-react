@@ -1,6 +1,7 @@
-import { ICategoryLocal } from '../../../types/category';
-import { CustomButton } from '../../shared/CustomButton';
 import { useNavigate } from 'react-router-dom';
+import { CustomButton } from '../../shared/CustomButton';
+import { Image } from '../../shared/Image';
+import { ICategoryLocal } from '../../../types/category';
 
 import styles from './categoryCard.module.scss';
 
@@ -14,12 +15,13 @@ function CategoryCard({ title, descr, img }: ICategoryLocal) {
   return (
     <li>
       <article className={styles.category}>
-        <div className={styles.category__image}>
-          <img src={img} alt={title} />
-        </div>
+        <Image src={img} title={title} className={styles.category__image} />
+
         <div className={styles.category__descr}>
           <h3 className={styles.category__caption}>{title}</h3>
+
           <p className={styles.category__info}>{descr}</p>
+
           <CustomButton
             text={'View Meals'}
             handleClick={goToCategoryByID}

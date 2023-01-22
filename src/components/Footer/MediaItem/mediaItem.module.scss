@@ -1,0 +1,12 @@
+@import "src/styles/common";
+
+.media {
+  &:not(:last-child) {
+    margin-right: $gap-30;
+  }
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+  }
+}
