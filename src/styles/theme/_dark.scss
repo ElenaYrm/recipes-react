@@ -1,0 +1,16 @@
+@import "../common/variables";
+
+html[data-theme='dark'] {
+  --background: #{$dark-background};
+  --background-secondary: #{$dark-background-secondary};
+  --background-gradient: #{$dark-background-gradient};
+
+  --primary: #{$dark-primary};
+  --secondary: #{$dark-secondary};
+  --secondary-light: #{$dark-secondary-light};
+  --thirdly: #{$dark-thirdly};
+
+  --shadow-primary: #{$dark-shadow-primary};
+  --shadow-secondary: #{$dark-shadow-secondary};
+  --shadow-thirdly: #{$dark-shadow-thirdly};
+}

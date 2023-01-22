@@ -9,4 +9,11 @@ export enum IconId {
   instagram = 'instagram',
   telegram = 'telegram',
   twitter = 'twitter',
+  moon = 'moon',
+  sun = 'sun',
+}
+
+export enum Theme {
+  Light = 'light',
+  Dark = 'dark',
 }

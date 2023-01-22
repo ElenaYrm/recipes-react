@@ -1,32 +1,30 @@
-// colors
-$background: #FFFFFF; // white
-$background-secondary: #FFB30E; // orange or gray
-$background-gradient: linear-gradient(180deg, rgba(255, 206, 103, 0.22) -42.47%, rgba(253, 237, 202, 0) 100%);
+/// Light theme colors
+$light-background: #FFFFFF; // white
+$light-background-secondary: #FFB30E; // orange or gray
+$light-background-gradient: linear-gradient(180deg, rgba(255, 206, 103, 0.22) -42.47%, rgba(253, 237, 202, 0) 100%);
 
-$primary: #FFB30E; // orange
-$secondary: #424242; // gray
-$secondary-light: #F5F5F5;
-$thirdly: #F17228; // red
+$light-primary: #FFB30E; // orange
+$light-secondary: #424242; // gray
+$light-secondary-light: #F5F5F5;
+$light-thirdly: #F17228; // red
 
-$shadow-primary: 0px 5px 10px rgba(255, 174, 0, 0.26), 0px 20px 40px rgba(255, 174, 0, 0.29);
-$shadow-secondary: 0px 14px 15px rgba(124, 124, 124, 0.06), 0px 27px 82px rgba(124, 124, 124, 0.28);
-$shadow-thirdly: 0px 5px 10px rgba(253, 114, 92, 0.22), 0px 20px 40px rgba(250, 99, 35, 0.24);
+$light-shadow-primary: 0px 5px 10px rgba(255, 174, 0, 0.26), 0px 20px 40px rgba(255, 174, 0, 0.29);
+$light-shadow-secondary: 0px 14px 15px rgba(124, 124, 124, 0.06), 0px 27px 82px rgba(124, 124, 124, 0.28);
+$light-shadow-thirdly: 0px 5px 10px rgba(253, 114, 92, 0.22), 0px 20px 40px rgba(250, 99, 35, 0.24);
 
-// for themes
-:root {
-  --background: #{$background};
-  --background-secondary: #{$background-secondary};
-  --background-gradient: #{$background-gradient};
+/// Dark theme colors
+$dark-background: #BBBBBB;
+$dark-background-secondary: #FFB30E; // orange or gray
+$dark-background-gradient: linear-gradient(180deg, rgba(255, 206, 103, 0.22) -42.47%, rgba(253, 237, 202, 0) 100%);
 
-  --primary: #{$primary};
-  --secondary: #{$secondary};
-  --secondary-light: #{$secondary-light};
-  --thirdly: #{$thirdly};
+$dark-primary: #FFB30E; // orange
+$dark-secondary: #424242; // gray
+$dark-secondary-light: #F5F5F5;
+$dark-thirdly: #F17228; // red
 
-  --shadow-primary: #{$shadow-primary};
-  --shadow-secondary: #{$shadow-secondary};
-  --shadow-thirdly: #{$shadow-thirdly};
-}
+$dark-shadow-primary: 0px 5px 10px rgba(255, 174, 0, 0.26), 0px 20px 40px rgba(255, 174, 0, 0.29);
+$dark-shadow-secondary: 0px 14px 15px rgba(124, 124, 124, 0.06), 0px 27px 82px rgba(124, 124, 124, 0.28);
+$dark-shadow-thirdly: 0px 5px 10px rgba(253, 114, 92, 0.22), 0px 20px 40px rgba(250, 99, 35, 0.24);
 
 // font
 $font-weight-map: (
