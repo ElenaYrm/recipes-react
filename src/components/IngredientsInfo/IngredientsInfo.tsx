@@ -11,6 +11,7 @@ import { IconId } from '../../types/enums';
 
 import styles from './ingredientsInfo.module.scss';
 
+// number of ingredients that is shown on page every time
 const step = 10;
 
 function IngredientsInfo() {

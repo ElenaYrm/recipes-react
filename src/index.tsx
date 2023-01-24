@@ -11,6 +11,7 @@ import './styles/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
+// set theme while first loading
 setTheme();
 
 root.render(

@@ -12,6 +12,8 @@ export function useMealInfo(id: string): [IMealLocal, ReturnType<typeof selectLo
   const { isLoading, error } = useSelector(selectLoadMealInfo);
 
   useEffect(() => {
+    // only when this meal wasn't loaded before
+
     if (id && meal?.id !== id) dispatch(loadMealInfo({ url: MEAL_ID_URL, params: { i: id } }));
   }, []);
 

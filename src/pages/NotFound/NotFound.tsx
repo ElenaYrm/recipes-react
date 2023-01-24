@@ -1,7 +1,9 @@
+import { Message } from '../../components/shared/Message';
+
 function NotFound() {
   return (
     <>
-      <p>Not found</p>
+      <Message message={'The page is not found'} typeMessage={'error'} />
     </>
   );
 }

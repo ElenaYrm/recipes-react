@@ -6,7 +6,7 @@ import styles from './logo.module.scss';
 
 function Logo() {
   return (
-    <Link to="/" className={styles.logo}>
+    <Link to="/" className={styles.logo} aria-label="Logo CookBook">
       <Icon id={IconId.logo} className={styles.logo_icon} />
     </Link>
   );

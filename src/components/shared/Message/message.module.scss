@@ -11,9 +11,11 @@
 .error {
   margin: 0;
   @include font(semibold, h2, var(--thirdly));
+  text-align: center;
 }
 
 .warn {
   margin: 0;
   @include font(semibold, h3, var(--text-secondary));
+  text-align: center;
 }

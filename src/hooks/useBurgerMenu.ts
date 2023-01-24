@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+// to change className for burger and body
+
 export function useBurgerMenu(): [boolean, () => void] {
   const [isActive, setIsActive] = useState(false);
 

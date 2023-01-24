@@ -8,6 +8,7 @@ import styles from './themeSwitcher.module.scss';
 
 function ThemeSwitcher() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  // use className to highlight what theme is using now
   const position: string = theme === Theme.Light ? 'left' : 'right';
 
   return (
@@ -15,6 +16,7 @@ function ThemeSwitcher() {
       className={classNames(styles.wrapper, { [styles[`wrapper__${position}`]]: true })}
       type="button"
       onClick={toggleTheme}
+      aria-label="Switch theme mode"
     >
       <Icon id={IconId.sun} className={styles.icon} />
 

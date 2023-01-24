@@ -14,6 +14,7 @@ import styles from './randomMeal.module.scss';
 function RandomMeal() {
   const [recipe, { isLoading, error }] = useRandomRecipe();
 
+  // change random meal on button click
   const dispatch = useAppDispatch();
   function changeMeal(): void {
     dispatch(loadRandomRecipe(RANDOM_URL));

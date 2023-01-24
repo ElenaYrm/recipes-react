@@ -12,6 +12,7 @@ import { IconId } from '../../types/enums';
 
 import styles from './recipesList.module.scss';
 
+// number of recipes that is shown on page every time
 const stepRecipe = 8;
 
 function RecipesList() {

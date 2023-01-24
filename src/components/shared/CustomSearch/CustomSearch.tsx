@@ -17,6 +17,8 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
     const newValue = event.target.value;
 
     setValue(newValue);
+
+    // set search params to use it as a filtration data
     if (newValue) {
       setSearchParams({ search: event.target.value });
     } else {
@@ -24,6 +26,7 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
     }
   }
 
+  // clear search params and input
   function handleClick() {
     setValue('');
     setSearchParams({});
@@ -45,7 +48,12 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
         />
       </label>
 
-      <button type="button" className={styles.search__btn} onClick={handleClick}>
+      <button
+        type="button"
+        className={styles.search__btn}
+        onClick={handleClick}
+        aria-label="Clear search"
+      >
         <Icon id={IconId.close} />
       </button>
     </form>

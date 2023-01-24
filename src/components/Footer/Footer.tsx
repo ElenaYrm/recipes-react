@@ -5,7 +5,6 @@ import { IconId } from '../../types/enums';
 import styles from './footer.module.scss';
 
 // contacts for example without real links
-
 const social: MediaItemProps[] = [
   {
     name: 'Facebook',

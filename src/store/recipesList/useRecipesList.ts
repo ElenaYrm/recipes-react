@@ -21,6 +21,8 @@ export function useRecipesList(
   let filter: Params = {};
 
   useEffect(() => {
+    // only when this data wasn't loaded before
+
     if (path !== prevPath) {
       if (path.includes('category')) {
         filter = {
