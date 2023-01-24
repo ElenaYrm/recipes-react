@@ -20,7 +20,7 @@ function RandomCard({ id, name, area, category, img }: RandomCardProps) {
       <div className={styles.recipe__info}>
         <h3 className={styles.recipe__name}>{name}</h3>
 
-        <ul>
+        <ul className={styles.recipe__list}>
           <DescriptionItem {...category} />
           <DescriptionItem {...area} />
         </ul>

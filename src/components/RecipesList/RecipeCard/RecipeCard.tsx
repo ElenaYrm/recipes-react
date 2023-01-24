@@ -7,7 +7,7 @@ import styles from './recipeCard.module.scss';
 function RecipeCard({ id, img, name }: IRecipesLocal) {
   return (
     <li>
-      <Link to={`/recipe/${id}`}>
+      <Link to={`/recipe/${id}`} className={styles.link}>
         <article className={styles.recipe}>
           <Image src={img} title={name} className={styles.recipe__image} />
 

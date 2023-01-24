@@ -1,18 +1,37 @@
 @import "src/styles/common";
 
+.link {
+  height: 100%;
+
+  &:focus-visible .recipe {
+    border-color: var(--thirdly);
+  }
+
+  &:hover .recipe,
+  &:active .recipe {
+    border-color: var(--thirdly);
+  }
+
+  &:hover .recipe__name,
+  &:active .recipe__name {
+    color: var(--thirdly);
+  }
+}
+
 .recipe {
   height: 100%;
-  min-height: 380px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: var(--shadow-secondary);
+  background-color: var(--background-dark);
+  box-shadow: var(--shadow);
   border-radius: $border-radius-2x;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
 
   &__image {
     margin-bottom: 15px;
-    min-height: 80%;
     width: 100%;
     border-radius: $border-radius-2x;
 
@@ -23,6 +42,9 @@
 
   &__name {
     margin: 0;
+    flex-grow: 1;
+    @include font(regular, h3, var(--text-primary));
     text-align: center;
+    transition: color 0.3s ease-in-out;
   }
 }

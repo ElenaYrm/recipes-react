@@ -1,30 +1,34 @@
 /// Light theme colors
-$light-background: #FFFFFF; // white
-$light-background-secondary: #FFB30E; // orange or gray
-$light-background-gradient: linear-gradient(180deg, rgba(255, 206, 103, 0.22) -42.47%, rgba(253, 237, 202, 0) 100%);
+$light-background: #F6F6F9;
+$light-background-dark: #E5E5E5;
 
-$light-primary: #FFB30E; // orange
-$light-secondary: #424242; // gray
-$light-secondary-light: #F5F5F5;
-$light-thirdly: #F17228; // red
+$light-text-primary: #212134;
+$light-text-secondary: #8E8EA9;
 
-$light-shadow-primary: 0px 5px 10px rgba(255, 174, 0, 0.26), 0px 20px 40px rgba(255, 174, 0, 0.29);
-$light-shadow-secondary: 0px 14px 15px rgba(124, 124, 124, 0.06), 0px 27px 82px rgba(124, 124, 124, 0.28);
-$light-shadow-thirdly: 0px 5px 10px rgba(253, 114, 92, 0.22), 0px 20px 40px rgba(250, 99, 35, 0.24);
+$light-fourthly: #DCDCE4; // white
+$light-fifth: #A5A5BA;
+$light-sixth: #FFFFFF;
 
 /// Dark theme colors
-$dark-background: #BBBBBB;
-$dark-background-secondary: #FFB30E; // orange or gray
-$dark-background-gradient: linear-gradient(180deg, rgba(255, 206, 103, 0.22) -42.47%, rgba(253, 237, 202, 0) 100%);
+$dark-background: #32324D;
+$dark-background-dark: #666687;
 
-$dark-primary: #FFB30E; // orange
-$dark-secondary: #424242; // gray
-$dark-secondary-light: #F5F5F5;
-$dark-thirdly: #F17228; // red
+$dark-text-primary: #FFFFFF;
+$dark-text-secondary: #C0C0CF;
 
-$dark-shadow-primary: 0px 5px 10px rgba(255, 174, 0, 0.26), 0px 20px 40px rgba(255, 174, 0, 0.29);
-$dark-shadow-secondary: 0px 14px 15px rgba(124, 124, 124, 0.06), 0px 27px 82px rgba(124, 124, 124, 0.28);
-$dark-shadow-thirdly: 0px 5px 10px rgba(253, 114, 92, 0.22), 0px 20px 40px rgba(250, 99, 35, 0.24);
+$dark-fourthly: #4A4A6A; // purple dark
+$dark-fifth: #EAEAEF;
+$dark-sixth: #32324D;
+
+// common colors
+:root {
+  --primary: #615793; // purple
+  --secondary: #FFB01D; // yellow
+  --thirdly: #FF7B2C; // orange
+  --white: #FFFFFF;
+
+  --shadow: 0px 0px 1px rgba(12, 26, 75, 0.03), 0px 4px 20px -2px rgba(50, 50, 71, 0.04);
+}
 
 // font
 $font-weight-map: (
@@ -34,16 +38,18 @@ $font-weight-map: (
 );
 
 $title1: 60px, 100%;
-$title2: 40px, 100%;
-$title3: 30px, 100%;
+$title2: 30px, 100%;
+$title3: 25px, 100%;
+$title4: 20px, 100%;
 
-$text1: 16px, 20px;
-$text2: 14px, 16px;
+$text1: 18px, 20px;
+$text2: 16px, 16px;
 
 $font-type-map: (
   'h1':$title1,
   'h2':$title2,
   'h3':$title3,
+  'h4':$title4,
   'p1':$text1,
   'p2':$text2,
 );

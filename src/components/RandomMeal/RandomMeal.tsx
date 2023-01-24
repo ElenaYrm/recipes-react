@@ -3,9 +3,11 @@ import { useAppDispatch } from '../../store/store';
 import { loadRandomRecipe } from '../../store/randomRecipe/random-slice';
 import { RANDOM_URL } from '../../axios/configAxios';
 import { CustomButton } from '../shared/CustomButton';
+import { Icon } from '../shared/Icon';
 import { Loader } from '../shared/Loader';
 import { Message } from '../shared/Message';
 import { RandomCard } from './RandomCard';
+import { IconId } from '../../types/enums';
 
 import styles from './randomMeal.module.scss';
 
@@ -27,6 +29,7 @@ function RandomMeal() {
             handleClick={changeMeal}
             buttonType={'white'}
             className={styles.random__btn}
+            icon={<Icon id={IconId.arrowReload} className={styles.random__icon} />}
           />
         </div>
 

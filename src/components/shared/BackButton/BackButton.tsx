@@ -14,7 +14,7 @@ function BackButton() {
     <CustomButton
       text={'Back'}
       handleClick={goBack}
-      buttonType={'red'}
+      buttonType={'purple'}
       className={styles.back}
       icon={<Icon id={IconId.arrowLeft} className={styles.back__icon} />}
     />

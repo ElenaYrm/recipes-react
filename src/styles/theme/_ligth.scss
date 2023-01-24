@@ -2,15 +2,12 @@
 
 html[data-theme='light'] {
   --background: #{$light-background};
-  --background-secondary: #{$light-background-secondary};
-  --background-gradient: #{$light-background-gradient};
+  --background-dark: #{$light-background-dark};
 
-  --primary: #{$light-primary};
-  --secondary: #{$light-secondary};
-  --secondary-light: #{$light-secondary-light};
-  --thirdly: #{$light-thirdly};
+  --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
 
-  --shadow-primary: #{$light-shadow-primary};
-  --shadow-secondary: #{$light-shadow-secondary};
-  --shadow-thirdly: #{$light-shadow-thirdly};
+  --fourthly: #{$light-fourthly};
+  --fifth: #{$light-fifth};
+  --sixth: #{$light-sixth};
 }

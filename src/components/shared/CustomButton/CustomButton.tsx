@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import styles from './customButton.module.scss';
 
 interface CustomButtonProps {
-  text: string;
   handleClick: () => void;
-  buttonType?: 'white' | 'orange' | 'red';
+  text?: string;
+  buttonType?: 'white' | 'purple' | 'orange';
   className?: string;
   icon?: ReactNode;
 }
@@ -14,7 +14,7 @@ interface CustomButtonProps {
 function CustomButton({
   text,
   handleClick,
-  buttonType = 'white',
+  buttonType = 'purple',
   className,
   icon,
 }: CustomButtonProps) {
@@ -23,7 +23,7 @@ function CustomButton({
   return (
     <button className={classes} onClick={handleClick}>
       {icon || null}
-      {text}
+      {text || null}
     </button>
   );
 }

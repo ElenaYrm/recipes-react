@@ -1,10 +1,18 @@
 @use "variables";
 
-@mixin font($weight: regular, $type, $color: var(--secondary)) {
+@mixin font($weight: regular, $type, $color: var(--text)) {
   $font-type: map-get(variables.$font-type-map, $type);
 
   font-weight: map-get(variables.$font-weight-map, $weight);
   font-size: nth($font-type, 1);
   line-height: nth($font-type, 2);
   color: $color;
+}
+
+@mixin title2 {
+  @include font(semibold, h2, var(--text));
+
+  @media (max-width: 768px) {
+    @include font(semibold, h3, var(--text));
+  }
 }

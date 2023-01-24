@@ -4,9 +4,11 @@ import { useFilterBySearch, useShowMoreBtn } from '../../hooks';
 import { CustomSearch } from '../shared/CustomSearch';
 import { CustomButton } from '../shared/CustomButton';
 import { BackButton } from '../shared/BackButton';
+import { Icon } from '../shared/Icon';
 import { Loader } from '../shared/Loader';
 import { Message } from '../shared/Message';
 import { RecipeCard } from './RecipeCard';
+import { IconId } from '../../types/enums';
 
 import styles from './recipesList.module.scss';
 
@@ -50,8 +52,9 @@ function RecipesList() {
                 <CustomButton
                   text={'More meals'}
                   handleClick={handleCount}
-                  buttonType={'red'}
+                  buttonType={'purple'}
                   className={styles.recipes__btn}
+                  icon={<Icon id={IconId.arrowDown} className={styles.recipes__icon} />}
                 />
               </div>
             )}

@@ -25,7 +25,7 @@ function CategoryCard({ title, descr, img }: ICategoryLocal) {
           <CustomButton
             text={'View Meals'}
             handleClick={goToCategoryByID}
-            buttonType={'red'}
+            buttonType={'orange'}
             className={styles.category__btn}
           />
         </div>

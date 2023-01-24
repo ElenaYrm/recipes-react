@@ -22,7 +22,16 @@ const links: INavItem[] = [
   },
 ];
 
-function Nav() {
+interface NavProps {
+  onClick?: () => void;
+}
+
+// Noop function if it doesn't have to do smth on navItem click (for burger)
+const noop = () => {
+  return;
+};
+
+function Nav({ onClick = noop }: NavProps) {
   return (
     <nav className={styles.nav}>
       <ul className={styles.nav__list}>
@@ -32,6 +41,7 @@ function Nav() {
             {...item}
             className={styles.nav__item}
             activeClass={styles.active}
+            onClick={onClick}
           />
         ))}
       </ul>

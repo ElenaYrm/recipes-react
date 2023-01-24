@@ -8,7 +8,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: var(--shadow-secondary);
+  background-color: var(--background-dark);
+  box-shadow: var(--shadow);
   border-radius: $border-radius-2x;
 
   &__label {
@@ -29,9 +30,24 @@
   &__input {
     padding: 12px 20px 12px 50px;
     width: 100%;
-    background-color: var(--secondary-light);
-    border: none;
+    color: var(--text-primary);
+    background-color: var(--sixth);
+    border: 1px solid transparent;
     border-radius: $border-radius-1x;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus-visible,
+    &:active {
+      border-color: var(--thirdly);
+    }
+
+    &::placeholder {
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:hover::placeholder {
+      color: var(--thirdly);
+    }
   }
 
   &__btn {
@@ -42,6 +58,15 @@
     width: 25px;
     height: 25px;
     color: var(--secondary);
+
+    &:focus-visible {
+      outline: 1px solid var(--thirdly);
+    }
+
+    &:hover,
+    &:active {
+      color: var(--thirdly)
+    }
 
     & svg {
       width: 100%;

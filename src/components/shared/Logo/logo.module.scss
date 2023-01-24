@@ -8,6 +8,11 @@
   &_icon {
     height: 80px;
     width: 150px;
+
+    @media (max-width: 768px) {
+      height: 55px;
+      width: 100px;
+    }
   }
 }
 

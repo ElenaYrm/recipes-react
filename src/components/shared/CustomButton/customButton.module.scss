@@ -4,22 +4,49 @@
   padding: 8px 0;
   border-radius: $border-radius-1x;
   text-align: center;
+  transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .white {
-  @include font(semibold, p1, (var(--primary)));
-  background-color: var(--background);
-  box-shadow: var(--shadow-primary);
+  @include font(semibold, p1, var(--fifth));
+  background-color: var(--sixth);
+  border: 2px solid var(--fourthly);
+
+  &:focus-visible {
+    border-color: var(--thirdly);
+  }
+
+  &:hover,
+  &:active {
+    border-color: var(--thirdly);
+    color: var(--thirdly);
+  }
 }
 
 .orange {
-  @include font(semibold, p1, (var(--background)));
-  background-color: var(--primary);
-  box-shadow: var(--shadow-primary);
+  @include font(semibold, p1, var(--sixth));
+  background-color: var(--secondary);
+
+  &:focus-visible {
+    outline: 2px solid var(--text-primary);
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--thirdly);
+  }
 }
 
-.red {
-  @include font(semibold, p1, (var(--background)));
-  background-color: var(--thirdly);
-  opacity: 0.7;
+.purple {
+  @include font(semibold, p1, var(--white));
+  background-color: var(--primary);
+
+  &:focus-visible {
+    outline: 2px solid var(--thirdly);
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--thirdly);
+  }
 }

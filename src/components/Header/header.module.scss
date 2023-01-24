@@ -1,10 +1,82 @@
 .header {
-  background-color: var(--background);
+  position: relative;
+  background-color: var(--background-dark);
+  box-shadow: var(--shadow);
 
   &__content {
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__links {
+    flex-basis: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    & span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--thirdly);
+      outline-offset: 2px;
+    }
+
+    &:hover,
+    &:active {
+      & span {
+        background-color: var(--thirdly);
+      }
+
+      &::before,
+      &::after {
+        background-color: var(--thirdly);
+      }
+    }
   }
 }

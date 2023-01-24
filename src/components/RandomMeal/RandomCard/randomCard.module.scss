@@ -5,9 +5,15 @@
   height: 350px;
   display: flex;
   justify-content: space-between;
+  background-color: var(--background-dark);
   border-radius: $border-radius-2x;
-  box-shadow: var(--shadow-secondary);
+  box-shadow: var(--shadow);
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 500px;
+    flex-direction: column;
+  }
 
   &__info {
     padding: 40px 20px;
@@ -15,11 +21,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 768px) {
+      flex-basis: 50%;
+      order: 2;
+    }
+  }
+
+  &__list {
+    margin-bottom: $gap-30;
   }
 
   &__name {
     margin: 0 0 25px;
-    @include font(semibold, h3, var(--primary));
+    @include font(semibold, h3, var(--text-primary));
     text-align: center;
   }
 
@@ -30,5 +45,9 @@
 
   &__image {
     flex-basis: 65%;
+
+    @media (max-width: 768px) {
+      flex-basis: 50%;
+    }
   }
 }

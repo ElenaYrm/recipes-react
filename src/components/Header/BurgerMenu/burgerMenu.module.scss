@@ -1,0 +1,53 @@
+@import "src/styles/common";
+
+.burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  padding: $gap-50;
+  background-color: var(--background-dark);
+  transform: translateX(-120%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+
+  &__btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--text-secondary);
+    transition: color 0.3s ease-in-out;
+
+    &:focus-visible {
+      outline: 1px solid var(--thirdly);
+      outline-offset: 2px;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--thirdly);
+    }
+  }
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  & nav ul {
+    margin-bottom: $gap-50;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & li:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: $gap-30;
+    }
+  }
+}

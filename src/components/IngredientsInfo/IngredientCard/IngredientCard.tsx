@@ -9,7 +9,7 @@ function IngredientCard({ name, img }: IIngredientLocal) {
 
   return (
     <li>
-      <Link to={`/ingredients/${linkName}`}>
+      <Link to={`/ingredients/${linkName}`} className={styles.link}>
         <article className={styles.ingredient}>
           <Image src={img} title={name} className={styles.ingredient__image} />
 

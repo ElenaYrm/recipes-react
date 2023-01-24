@@ -2,6 +2,7 @@
 
 .footer {
   padding: $gap-30 0;
+  background-color: var(--background-dark);
 
   &__content {
     display: flex;
@@ -12,7 +13,7 @@
 
   &__title {
     margin: 0 0 $gap-30 0;
-    @include font(semibold, h3, (var(--secondary)))
+    @include font(semibold, h3, var(--text-primary))
   }
 
   &__social {

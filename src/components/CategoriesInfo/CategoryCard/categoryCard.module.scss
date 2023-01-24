@@ -2,15 +2,15 @@
 
 .category {
   height: 100%;
-  padding: 20px;
+  padding: $gap-30;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: var(--shadow-secondary);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--text-secondary);
   border-radius: $border-radius-2x;
 
   &__image {
-    height: 40%;
     width: 100%;
     margin-bottom: $gap-30;
 
@@ -20,7 +20,7 @@
   }
 
   &__descr {
-    min-height: 70%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;

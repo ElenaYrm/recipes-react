@@ -5,6 +5,20 @@
     margin-right: $gap-30;
   }
 
+  & a {
+    transition: color 0.3s ease-in-out;
+
+    &:focus-visible {
+      outline: 1px solid var(--thirdly);
+      outline-offset: 2px;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--thirdly);
+    }
+  }
+
   &__icon {
     width: 35px;
     height: 35px;

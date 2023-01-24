@@ -24,10 +24,13 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: 'Barlow', sans-serif;
-  @include font(regular, p1, var(--secondary));
-
+  @include font(regular, p1, var(--text-primary));
   background-color: var(--background);
-  transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    @include font(regular, p2, var(--text-primary));
+  }
 }
 
 :active,
@@ -42,6 +45,10 @@ body {
   visibility: hidden;
   pointer-events: none;
   position: absolute;
+}
+
+.stop-scroll {
+  overflow: hidden;
 }
 
 button {

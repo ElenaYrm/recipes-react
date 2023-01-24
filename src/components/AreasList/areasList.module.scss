@@ -5,7 +5,7 @@
 
   &__title {
     margin: 0 0 $gap-30;
-    @include font(semibold, h2, var(--secondary));
+    @include title2;
   }
 
   &__list {
@@ -18,10 +18,33 @@
   }
 
   &__item {
-    margin: 0 $gap-30 $gap-30 0;
-    padding: 15px 20px;
-    @include font(semibold, p1, var(--secondary));
-    border-radius: $border-radius-2x;
-    box-shadow: var(--shadow-thirdly);
+    margin: 0 $gap-30 $gap-50 0;
+
+    @media (max-width: 768px) {
+      margin: 0 20px 30px 0;
+    }
+
+    & a {
+      padding: 15px 20px;
+      border: 2px solid var(--text-secondary);
+      border-radius: $border-radius-2x;
+      box-shadow: var(--shadow);
+      transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+      @media (max-width: 768px) {
+        padding: 7px 10px;
+        border-radius: $border-radius-1x;
+      }
+
+      &:focus-visible,
+      &:active {
+        border-color: var(--thirdly);
+      }
+
+      &:hover {
+        border-color: var(--thirdly);
+        color: var(--thirdly);
+      }
+    }
   }
 }

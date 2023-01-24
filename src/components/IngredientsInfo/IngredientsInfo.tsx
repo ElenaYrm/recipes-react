@@ -4,9 +4,10 @@ import { useFilterBySearch } from '../../hooks';
 import { IngredientCard } from './IngredientCard';
 import { CustomButton } from '../shared/CustomButton';
 import { CustomSearch } from '../shared/CustomSearch';
-import { BackButton } from '../shared/BackButton';
+import { Icon } from '../shared/Icon';
 import { Loader } from '../shared/Loader';
 import { Message } from '../shared/Message';
+import { IconId } from '../../types/enums';
 
 import styles from './ingredientsInfo.module.scss';
 
@@ -20,8 +21,6 @@ function IngredientsInfo() {
   return (
     <section className={styles.ingredients}>
       <div className="container">
-        <BackButton />
-
         <CustomSearch placeholder={'Enter Ingredient'} />
 
         <h2 className={styles.ingredients__title}>Ingredients</h2>
@@ -46,8 +45,9 @@ function IngredientsInfo() {
                 <CustomButton
                   text={'More ingredients'}
                   handleClick={handleCount}
-                  buttonType={'red'}
+                  buttonType={'purple'}
                   className={styles.ingredients__btn}
+                  icon={<Icon id={IconId.arrowDown} className={styles.ingredients__icon} />}
                 />
               </div>
             )}

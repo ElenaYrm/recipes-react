@@ -1,17 +1,38 @@
 @import "src/styles/common";
 
-.ingredient {
+.link {
   height: 100%;
+
+  &:focus-visible .ingredient__image {
+    border-color: var(--thirdly);
+  }
+
+  &:hover .ingredient__image,
+  &:active .ingredient__image,{
+    border-color: var(--thirdly);
+  }
+
+  &:hover .ingredient__name,
+  &:active .ingredient__name,{
+    color: var(--thirdly);
+  }
+}
+
+.ingredient {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   &__image {
     margin-bottom: 15px;
-    min-height: 80%;
     width: 100%;
+    flex-basis: 80%;
+    flex-shrink: 0;
     border-radius: 100%;
-    box-shadow: var(--shadow-secondary);
+    border: 1px solid transparent;
+    box-shadow: var(--shadow);
+    transition: border-color 0.3s ease-in-out;
 
     & img {
       width: 70%;
@@ -22,6 +43,9 @@
 
   &__name {
     margin: 0;
+    flex-grow: 1;
+    @include font(regular, p2, var(--text-secondary));
     text-align: center;
+    transition: color 0.3s ease-in-out;
   }
 }

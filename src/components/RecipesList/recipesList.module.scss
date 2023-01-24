@@ -5,10 +5,10 @@
 
   &__title {
     margin: 0 0 $gap-30;
-    @include font(semibold, h2, var(--secondary));
+    @include title2;
 
     & span {
-      color: var(--thirdly);
+      color: var(--secondary);
     }
   }
 
@@ -17,14 +17,36 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: $gap-50;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 478px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__wrapper {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__btn {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: $gap-50;
+    padding-right: $gap-50;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
   }
 }
