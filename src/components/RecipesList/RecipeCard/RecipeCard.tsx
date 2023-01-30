@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from '../../shared/Image';
 import { IRecipesLocal } from '../../../types/recipe';
@@ -18,4 +19,4 @@ function RecipeCard({ id, img, name }: IRecipesLocal) {
   );
 }
 
-export default RecipeCard;
+export default memo(RecipeCard);

@@ -1,5 +1,6 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, memo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useDebounce } from '../../../hooks';
 import { Icon } from '../Icon';
 import { IconId } from '../../../types/enums';
 
@@ -13,17 +14,20 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [value, setValue] = useState(searchParams.get('search') || '');
 
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    const newValue = event.target.value;
-
-    setValue(newValue);
-
+  const changeParams = (value: string) => {
     // set search params to use it as a filtration data
-    if (newValue) {
-      setSearchParams({ search: event.target.value });
+    if (value) {
+      setSearchParams({ search: value });
     } else {
       setSearchParams({});
     }
+  };
+  const debounceChangeParams = useDebounce(changeParams, 500);
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const newValue = event.target.value;
+    setValue(newValue);
+    debounceChangeParams(event.target.value);
   }
 
   // clear search params and input
@@ -48,16 +52,11 @@ function CustomSearch({ placeholder }: CustomSearchProps) {
         />
       </label>
 
-      <button
-        type="button"
-        className={styles.search__btn}
-        onClick={handleClick}
-        aria-label="Clear search"
-      >
+      <button type="button" className={styles.search__btn} onClick={handleClick} aria-label="Clear search">
         <Icon id={IconId.close} />
       </button>
     </form>
   );
 }
 
-export default CustomSearch;
+export default memo(CustomSearch);

@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import { memo, SVGProps } from 'react';
 import { IconId } from '../../../types/enums';
 
 interface IconProps extends SVGProps<SVGSVGElement> {
@@ -13,4 +13,4 @@ function Icon({ id, className, ...props }: IconProps) {
   );
 }
 
-export default Icon;
+export default memo(Icon);

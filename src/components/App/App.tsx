@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout';
 import { NotFound } from '../../pages/NotFound';
+import { Loader } from '../shared/Loader';
 
 const Home = React.lazy(() => import('pages/Home/Home'));
 const RecipeDetails = React.lazy(() => import('pages/RecipeDetails/RecipeDetails'));
@@ -17,7 +18,7 @@ function App() {
           <Route
             index
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Home />
               </React.Suspense>
             }
@@ -25,7 +26,7 @@ function App() {
           <Route
             path="recipe/:id"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <RecipeDetails />
               </React.Suspense>
             }
@@ -33,7 +34,7 @@ function App() {
           <Route
             path="category"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Category />
               </React.Suspense>
             }
@@ -41,7 +42,7 @@ function App() {
           <Route
             path="ingredients"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Ingredients />
               </React.Suspense>
             }
@@ -50,7 +51,7 @@ function App() {
           <Route
             path="area/:name"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Recipes />
               </React.Suspense>
             }
@@ -58,7 +59,7 @@ function App() {
           <Route
             path="category/:name"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Recipes />
               </React.Suspense>
             }
@@ -66,7 +67,7 @@ function App() {
           <Route
             path="ingredients/:name"
             element={
-              <React.Suspense>
+              <React.Suspense fallback={<Loader />}>
                 <Recipes />
               </React.Suspense>
             }

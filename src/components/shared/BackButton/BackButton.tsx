@@ -4,11 +4,12 @@ import { Icon } from '../Icon';
 import { IconId } from '../../../types/enums';
 
 import styles from './backButton.module.scss';
+import { memo, useCallback } from 'react';
 
 function BackButton() {
   const navigate = useNavigate();
 
-  const goBack = () => navigate(-1);
+  const goBack = useCallback(() => navigate(-1), []);
 
   return (
     <CustomButton
@@ -21,4 +22,4 @@ function BackButton() {
   );
 }
 
-export default BackButton;
+export default memo(BackButton);

@@ -1,4 +1,4 @@
-import { useBurgerMenu } from '../../hooks/useBurgerMenu';
+import { useBurgerMenu } from '../../hooks';
 import { Logo } from '../shared/Logo';
 import { Nav } from './Nav';
 import { ThemeSwitcher } from './ThemeSwitcher';

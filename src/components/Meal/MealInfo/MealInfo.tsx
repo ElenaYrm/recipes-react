@@ -5,16 +5,7 @@ import { IMealLocal } from '../../../types/meal';
 
 import styles from './mealInfo.module.scss';
 
-function MealInfo({
-  name,
-  img,
-  source,
-  category,
-  area,
-  video,
-  instructions,
-  ingredients,
-}: IMealLocal) {
+function MealInfo({ name, img, source, category, area, video, instructions, ingredients }: IMealLocal) {
   return (
     <>
       <Image src={img} title={name} className={styles.meal__image} />
@@ -32,8 +23,10 @@ function MealInfo({
           <h3 className={styles.meal__caption}>Ingredients</h3>
           {ingredients?.length > 0 ? (
             <ul>
-              {ingredients.map((item) => (
-                <IngredientDetails key={item.ingredient + item.measure} {...item} />
+              {ingredients.map((item, index) => (
+                // it will the const list of ingredients
+                // (ingredient and measure repeat, and it provides error)
+                <IngredientDetails key={index} {...item} />
               ))}
             </ul>
           ) : null}
@@ -48,11 +41,7 @@ function MealInfo({
       {video && (
         <div>
           <h3 className={styles.meal__caption}>Video</h3>
-          <iframe
-            className={styles.meal__video}
-            title={name}
-            src={`https://www.youtube.com/embed/${video}`}
-          />
+          <iframe className={styles.meal__video} title={name} src={`https://www.youtube.com/embed/${video}`} />
         </div>
       )}
     </>

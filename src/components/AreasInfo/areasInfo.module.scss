@@ -1,0 +1,10 @@
+@import "src/styles/common/index";
+
+.areas {
+  padding: $gap-30 0;
+
+  &__title {
+    margin: 0 0 $gap-30;
+    @include title2;
+  }
+}

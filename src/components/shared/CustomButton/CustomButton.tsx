@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import classNames from 'classnames';
 
 import styles from './customButton.module.scss';
@@ -11,13 +11,7 @@ interface CustomButtonProps {
   icon?: ReactNode;
 }
 
-function CustomButton({
-  text,
-  handleClick,
-  buttonType = 'purple',
-  className,
-  icon,
-}: CustomButtonProps) {
+function CustomButton({ text, handleClick, buttonType = 'purple', className, icon }: CustomButtonProps) {
   const classes = classNames(styles.btn, { [styles[buttonType]]: true }, className);
 
   return (
@@ -28,4 +22,4 @@ function CustomButton({
   );
 }
 
-export default CustomButton;
+export default memo(CustomButton);

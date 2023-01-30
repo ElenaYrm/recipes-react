@@ -1,8 +1,12 @@
 # CookBook - recipes from around the world
 
-https://www.themealdb.com/api.php was used for this project.
+Project - https://recipes.elenportfolio.net/
+
+
 You can see detail recipe of meal and group of meals filtered by area, category or ingredient.
 And you can switch the color theme.
+
+https://www.themealdb.com/api.php was used for this project.
 
 ## Built with
 

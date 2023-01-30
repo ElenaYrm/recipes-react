@@ -1,13 +1,6 @@
-@import "src/styles/common";
+@import 'src/styles/common';
 
 .areas {
-  padding: $gap-30 0;
-
-  &__title {
-    margin: 0 0 $gap-30;
-    @include title2;
-  }
-
   &__list {
     margin: 0 auto;
     width: 80%;
